@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen flex flex-col font-mono antialiased bg-slate-900 text-slate-100">
+    <header class="py-2">
+        <nav class="container mx-auto flex justify-between items-center">
+            <span class="text-4xl font-semibold">To Do List</span>
+        </nav>
+    </header>
+
+    <div class="flex flex-grow">
+        <aside class="w-1/4 h-fit bg-slate-800 p-4 rounded-lg mx-2 my-2">
+            <h2 class="text-2xl font-semibold mb-4">Calendar</h2>
+            <div class="flex justify-between items-center mb-4">
+                <button id="prevMonth" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Previous</button>
+                <span id="currentMonthYear" class="text-lg font-semibold text-white"></span>
+                <button id="nextMonth" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Next</button>
+            </div>
+            <div id="calendar" class="bg-slate-700 p-4 rounded-lg shadow-md"></div>
+        </aside>
+
+        <section class="flex-grow p-4">
+            <div class="relative w-full max-w-md mx-auto">
+                <div class="flex items-center">
+                    <input type="text" id="addTask" placeholder="Your Task"
+                        class="peer h-10 w-full rounded-md bg-gray-50 text-gray-800 pl-4 pr-20 font-thin outline-none drop-shadow-sm focus:bg-white focus:drop-shadow-lg" />
+                    <button id="task_add_id"
+                        class="absolute right-0 h-10 w-16 rounded-r-md bg-blue-600 text-white font-semibold hover:bg-blue-700">
+                        ADD
+                    </button>
+                </div>
+                <div id="createdTask" class="mt-4"></div>
+            </div>
+        </section>
+
+        <aside class="w-1/4 h-fit bg-slate-800 p-4 rounded-lg mx-2 my-2">
+            <h2 class="text-2xl font-semibold mb-4">Task Details</h2>
+            <div id="taskDetails" class="bg-slate-700 p-4 rounded-lg shadow-md">
+                <p class="text-gray-400">Select a task to view or edit details.</p>
+            </div>
+        </aside>
+    </div>
+
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div id="modalContent" class="bg-slate-800 p-6 rounded-lg shadow-lg w-1/3 text-white relative">
+            <button id="modalClose" class="absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded-full hover:bg-red-600">
+                &times;
+            </button>
+            <div id="modalBody">
+                <p>Modal content goes here.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-slate-800 text-center">
+        Bayar kalo mau pake yah, di ubig gak ada yang gratis😜😡
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
